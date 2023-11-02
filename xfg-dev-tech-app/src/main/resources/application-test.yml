@@ -1,0 +1,17 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:sharding/sharding-jdbc-dev.yaml
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  config-location:  classpath:/mybatis/config/mybatis-config.xml
+
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
