@@ -1,4 +1,9 @@
-# sharding-jdbc
+# sharding-jdbc 使用教程和模型结构
+
+作者：小傅哥
+<br/>博客：[https://bugstack.cn](https://bugstack.cn)
+
+> 沉淀、分享、成长，让自己和他人都能有所收获！😄
 
 本文的宗旨在于通过简单干净实践的方式教会读者，快速 Easy 的使用上 sharding-jdbc 这个笨重的大家伙！
 
@@ -14,7 +19,7 @@
 分库分表的本质是数据的散列，分摊数据库资源压力。如把原本在一台机器上的数据库存放1000万数据，分摊到n台机上，拆分这1000万的数据和后续的增量。让每个数据库资源来分摊原本需要一台数据库所提供的服务。
 
 <div align="center">
-    <img src="./docs/images/roadmap-shardingjdbc-01.png?raw=true" width="600px">
+    <img src="https://bugstack.cn/images/roadmap/tutorial/roadmap-shardingjdbc-01.png?raw=true" width="600px">
 </div>
 
 - 当使用分库分表以后，并确定如使用`用户ID`作为路由分片键。那么所做的CRUD操作，都是需要使用到这个用户ID，并根据ID做路由库表计算。
@@ -46,7 +51,7 @@
 ### 1. 工程结构
 
 <div align="center">
-    <img src="./docs/images/roadmap-shardingjdbc-02.png?raw=true" width="850px">
+    <img src="https://bugstack.cn/images/roadmap/tutorial/roadmap-shardingjdbc-02.png?raw=true" width="850px">
 </div>
 
 - 工程中，提供了 docker 配置数据库环境操作，并提供了对应的建表测试语句。如果你本机已经安装了数据库，那么只做库表语句导入以及 yml 配置数据库连接信息就可以。
@@ -156,7 +161,7 @@ spring:
 ## 三、测试验证
 
 <div align="center">
-    <img src="./docs/images/roadmap-shardingjdbc-03.png?raw=true" width="850px">
+    <img src="https://bugstack.cn/images/roadmap/tutorial/roadmap-shardingjdbc-03.png?raw=true" width="850px">
 </div>
 
 - 基于工程中 docs/dev-ops/mysql/sql 创建库表。已经提供了库名、表和测试数据。
@@ -221,4 +226,3 @@ public void test_idx() {
 
 - 你可以尝试验证和编写新的散列算法，最终目的都是让数据尽可能散列到库表。
 - 此外，关于算法的好坏，可以基于[雪崩测试](https://bugstack.cn/md/algorithm/logic/math/2022-11-05-fibonacci.html)计算
-
